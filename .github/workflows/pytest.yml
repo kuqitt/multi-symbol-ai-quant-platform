@@ -20,6 +20,8 @@ jobs:
     name: Backend Tests · Python ${{ matrix.python-version }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      PYTHONPATH: ${{ github.workspace }}/backend
     strategy:
       fail-fast: false
       matrix:
@@ -39,7 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run pytest
-        run: pytest
+        run: python -m pytest
 
   frontend-build:
     name: Frontend Build · Node 20
