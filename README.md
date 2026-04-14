@@ -11,12 +11,68 @@ An open-source, safety-first AI / quant trading platform for multi-symbol resear
 
 This project combines a FastAPI backend, a React + Vite frontend, exchange adapters, portfolio and risk controls, research workflows, and Telegram / Feishu bot control into one extensible workspace.
 
+| Focus | What you get |
+| --- | --- |
+| Safety-first runtime | Paper-first defaults, live-trading guardrails, approvals, protect mode |
+| Operator tooling | Dashboard, replay, logs, metrics, Telegram bot, Feishu bot |
+| Research workflow | Backtest APIs, optimization foundation, walk-forward structure |
+| Open collaboration | MIT license, bilingual docs, issue templates, PR template, CI |
+
 Quick links:
 
 - [Releases](https://github.com/kuqitt/multi-symbol-ai-quant-platform/releases)
 - [Issues](https://github.com/kuqitt/multi-symbol-ai-quant-platform/issues)
 - [Pull Requests](https://github.com/kuqitt/multi-symbol-ai-quant-platform/pulls)
 - [Actions](https://github.com/kuqitt/multi-symbol-ai-quant-platform/actions)
+
+## Quick Demo
+
+1. Start the stack with `docker compose up --build`.
+2. Open the frontend at `http://localhost:5173`.
+3. Sign in with the seeded admin account.
+4. Inspect runtime status, metrics, positions, replay, and logs.
+5. Configure Telegram or Feishu bot control from the system configuration page.
+6. Keep the system in paper mode until you have fully validated your workflow.
+
+## Architecture At A Glance
+
+```mermaid
+flowchart LR
+  U[Operator] --> F[React Frontend]
+  U --> T[Telegram Bot]
+  U --> FS[Feishu Bot]
+
+  F --> API[FastAPI Backend]
+  T --> API
+  FS --> API
+
+  API --> CFG[Config Service]
+  API --> STRAT[Strategy Service]
+  API --> BOT[Bot Service]
+  API --> MET[Metrics Service]
+  API --> MKT[Market Data Service]
+  API --> APP[Approval Service]
+
+  STRAT --> EX[Execution and Risk]
+  EX --> ADP[Exchange Adapters]
+  MKT --> ADP
+
+  API --> DB[(PostgreSQL / SQLModel)]
+  API --> WS[WebSocket Dashboard Stream]
+  ADP --> X[OKX / Binance / Simulator]
+```
+
+## Product Tour
+
+| Area | Primary value |
+| --- | --- |
+| Dashboard | Runtime state, alerts, equity snapshot, latest activity |
+| Metrics | Equity, drawdown, pnl, attribution, performance context |
+| Market / Kline | Market snapshots and chart-driven inspection |
+| Order Flow / Replay | Microstructure views and playback workflows |
+| Positions / Orders / Trades | Execution audit and state inspection |
+| Approvals | Manual review flow for restricted actions |
+| System Config | Exchange, bot, auth, notifier, and runtime configuration |
 
 ## Highlights
 
@@ -308,6 +364,62 @@ See [DISCLAIMER.md](DISCLAIMER.md) for the full bilingual disclaimer.
 一个面向开源共创的、多币种、安全优先的 AI / 量化交易平台，覆盖研究、模拟盘、测试网执行、监控看板、人工审核，以及 Telegram / 飞书机器人控制。
 
 本项目将 FastAPI 后端、React + Vite 前端、交易所适配器、组合与风控、研究流程，以及机器人运维控制整合在一个可扩展工作区中。
+
+| 重点 | 你会得到什么 |
+| --- | --- |
+| 安全优先运行时 | 模拟盘优先、实盘保护、人工审批、保护模式 |
+| 运维控制能力 | Dashboard、回放、日志、指标、Telegram、飞书机器人 |
+| 研究工作流 | 回测接口、参数寻优基础能力、Walk-Forward 结构 |
+| 开源协作基础 | MIT 协议、双语文档、Issue 模板、PR 模板、CI |
+
+## 快速体验
+
+1. 执行 `docker compose up --build` 启动整套服务。
+2. 打开前端 `http://localhost:5173`。
+3. 使用默认管理员账号登录。
+4. 查看运行状态、指标、持仓、回放和日志页面。
+5. 在系统配置页里配置 Telegram 或飞书机器人控制。
+6. 在完整验证前，始终保持在模拟盘模式。
+
+## 架构总览
+
+```mermaid
+flowchart LR
+  U[操作员] --> F[React 前端]
+  U --> T[Telegram 机器人]
+  U --> FS[飞书机器人]
+
+  F --> API[FastAPI 后端]
+  T --> API
+  FS --> API
+
+  API --> CFG[配置服务]
+  API --> STRAT[策略服务]
+  API --> BOT[机器人服务]
+  API --> MET[指标服务]
+  API --> MKT[行情服务]
+  API --> APP[审批服务]
+
+  STRAT --> EX[执行与风控]
+  EX --> ADP[交易所适配器]
+  MKT --> ADP
+
+  API --> DB[(PostgreSQL / SQLModel)]
+  API --> WS[WebSocket 实时推送]
+  ADP --> X[OKX / Binance / Simulator]
+```
+
+## 页面导览
+
+| 区域 | 主要价值 |
+| --- | --- |
+| Dashboard | 运行状态、告警、权益快照、最新活动 |
+| Metrics | 权益、回撤、收益、归因和性能背景 |
+| Market / Kline | 行情快照与图表观察 |
+| Order Flow / Replay | 微观结构和回放流程 |
+| Positions / Orders / Trades | 执行审计和状态检查 |
+| Approvals | 受限操作的人工审核流程 |
+| System Config | 交易所、机器人、鉴权、通知和运行配置 |
 
 ## 项目亮点
 
