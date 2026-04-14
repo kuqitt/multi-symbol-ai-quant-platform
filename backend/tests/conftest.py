@@ -7,7 +7,7 @@ from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine
 
 from app.adapters.okx_adapter import OKXAdapter
-from app.config import AppConfig, ApprovalConfig, EnvironmentSettings
+from app.config import AppConfig, ApprovalConfig, EnvironmentSettings, SimulationConfig
 from app.state import RiskStatus, RuntimeState, StrategyRuntimeStatus
 
 
@@ -31,7 +31,10 @@ def session(engine):
 
 @pytest.fixture
 def config() -> AppConfig:
-    return AppConfig(approval=ApprovalConfig(require_manual_approval_for_large_orders=False))
+    return AppConfig(
+        approval=ApprovalConfig(require_manual_approval_for_large_orders=False),
+        simulation=SimulationConfig(use_live_market_data=False),
+    )
 
 
 @pytest.fixture
