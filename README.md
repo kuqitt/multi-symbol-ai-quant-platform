@@ -1,10 +1,22 @@
 # Multi-Symbol AI Quant Trading Platform
 
+[![CI](https://github.com/kuqitt/multi-symbol-ai-quant-platform/actions/workflows/pytest.yml/badge.svg)](https://github.com/kuqitt/multi-symbol-ai-quant-platform/actions/workflows/pytest.yml)
+[![Release](https://img.shields.io/github/v/release/kuqitt/multi-symbol-ai-quant-platform)](https://github.com/kuqitt/multi-symbol-ai-quant-platform/releases)
+[![License](https://img.shields.io/github/license/kuqitt/multi-symbol-ai-quant-platform)](https://github.com/kuqitt/multi-symbol-ai-quant-platform/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/kuqitt/multi-symbol-ai-quant-platform)](https://github.com/kuqitt/multi-symbol-ai-quant-platform/issues)
+
 English | [简体中文](#简体中文)
 
 An open-source, safety-first AI / quant trading platform for multi-symbol research, paper trading, testnet execution, monitoring, approvals, and bot-based operations.
 
 This project combines a FastAPI backend, a React + Vite frontend, exchange adapters, portfolio and risk controls, research workflows, and Telegram / Feishu bot control into one extensible workspace.
+
+Quick links:
+
+- [Releases](https://github.com/kuqitt/multi-symbol-ai-quant-platform/releases)
+- [Issues](https://github.com/kuqitt/multi-symbol-ai-quant-platform/issues)
+- [Pull Requests](https://github.com/kuqitt/multi-symbol-ai-quant-platform/pulls)
+- [Actions](https://github.com/kuqitt/multi-symbol-ai-quant-platform/actions)
 
 ## Highlights
 
