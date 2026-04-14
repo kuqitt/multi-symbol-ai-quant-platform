@@ -252,6 +252,8 @@ npm run build
 Please read the following files before publishing contributions:
 
 - [CONTRIBUTING.md](CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SECURITY.md](SECURITY.md)
 - [DISCLAIMER.md](DISCLAIMER.md)
 - [LICENSE](LICENSE)
 - [LICENSE.zh-CN.md](LICENSE.zh-CN.md)
@@ -539,6 +541,8 @@ npm run build
 提交贡献前请先阅读：
 
 - [CONTRIBUTING.md](CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SECURITY.md](SECURITY.md)
 - [DISCLAIMER.md](DISCLAIMER.md)
 - [LICENSE](LICENSE)
 - [LICENSE.zh-CN.md](LICENSE.zh-CN.md)

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the README
+    url: https://github.com/kuqitt/multi-symbol-ai-quant-platform/blob/main/README.md
+    about: Start with project overview, setup, and configuration guidance.
+  - name: Read the Security Policy
+    url: https://github.com/kuqitt/multi-symbol-ai-quant-platform/blob/main/SECURITY.md
+    about: Do not post credential leaks or exploit details in public issues.
